@@ -443,7 +443,12 @@ public class Server {
         }
 
         if (canDeploy) {
-            world.setServerMessage(YamlConfig.config.worlds.get(i).server_message);
+            String serverMsg = YamlConfig.config.worlds.get(i).server_message;
+            if (serverMsg != null) {
+                world.setServerMessage(serverMsg);
+            } else {
+                world.setServerMessage("");
+            }
 
             log.info("Finished loading world {}", i);
             return i;

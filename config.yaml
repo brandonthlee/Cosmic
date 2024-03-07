@@ -4,165 +4,24 @@
 worlds:
     #Properties for Scania 0
   - flag: 0
-    server_message: Welcome to Scania!
-    event_message: Scania!
-    why_am_i_recommended: Welcome to Scania!
+    server_message:
+    event_message: test
+    why_am_i_recommended: test
     channels: 3
     exp_rate: 10
-    meso_rate: 10
-    drop_rate: 10
-    boss_drop_rate: 10                      #NOTE: Boss drop rate OVERRIDES common drop rate, for bosses-only.
-    quest_rate: 5                           #Multiplier for Exp & Meso gains when completing a quest. Only available when USE_QUEST_RATE is true. Stacks with server Exp & Meso rates.
-    fishing_rate: 10                        #Multiplier for success likelihood on meso thrown during fishing.
-    travel_rate: 10                         #Means of transportation rides/departs using 1/N of the default time.
-
-    #Properties for Bera 1
-  - flag: 0
-    server_message: Welcome to Bera!
-    event_message: Bera!
-    why_am_i_recommended: Welcome to Bera!
-    channels: 3
-
-    #Properties for Broa 2
-  - flag: 0
-    server_message: Welcome to Broa!
-    event_message: Broa!
-    why_am_i_recommended: Welcome to Broa!
-    channels: 3
-
-    #Properties for Windia 3
-  - flag: 0
-    server_message: Welcome to Windia!
-    event_message: Windia!
-    why_am_i_recommended: Welcome to Windia!
-    channels: 3
-
-    #Properties for Khaini 4
-  - flag: 0
-    server_message: Welcome to Khaini!
-    event_message: Khaini!
-    why_am_i_recommended: Welcome to Khaini!
-    channels: 3
-
-    #Properties for Bellocan 5
-  - flag: 0
-    server_message: Welcome to Bellocan!
-    event_message: Bellocan!
-    why_am_i_recommended: Welcome to Bellocan!
-    channels: 3
-
-    #Properties for Mardia 6
-  - flag: 0
-    server_message: Welcome to Mardia!
-    event_message: Mardia!
-    why_am_i_recommended: Welcome to Mardia!
-    channels: 3
-
-    #Properties for Kradia 7
-  - flag: 0
-    server_message: Welcome to Kradia!
-    event_message: Kradia!
-    why_am_i_recommended: Welcome to Kradia!
-    channels: 3
-
-    #Properties for Yellonde 8
-  - flag: 0
-    server_message: Welcome to Yellonde!
-    event_message: Yellonde!
-    why_am_i_recommended: Welcome to Yellonde!
-    channels: 3
-
-    #Properties for Demethos 9
-  - flag: 0
-    server_message: Welcome to Demethos!
-    event_message: Demethos!
-    why_am_i_recommended: Welcome to Demethos!
-    channels: 3
-
-    #Properties for Galicia 10
-  - flag: 0
-    server_message: Welcome to Galicia!
-    event_message: Galicia!
-    why_am_i_recommended: Welcome to Galicia!
-    channels: 3
-
-    #Properties for Kastia 11
-  - flag: 0
-    server_message: Welcome to Kastia!
-    event_message: Kastia!
-    why_am_i_recommended: Welcome to Kastia!
-    channels: 3
-
-    #Properties for Judis 12
-  - flag: 0
-    server_message: Welcome to Judis!
-    event_message: Judis!
-    why_am_i_recommended: Welcome to Judis!
-    channels: 3
-
-    #Properties for Arcenia 13
-  - flag: 0
-    server_message: Welcome to Arcenia!
-    event_message: Arcenia!
-    why_am_i_recommended: Welcome to Arcenia!
-    channels: 3
-
-    #Properties for Plana 14
-  - flag: 0
-    server_message: Welcome to Plana!
-    event_message: Plana!
-    why_am_i_recommended: Welcome to Plana!
-    channels: 3
-
-    #Properties for El Nido 15
-  - flag: 0
-    server_message: Welcome to El Nido!
-    event_message: El Nido!
-    why_am_i_recommended: Welcome to El Nido!
-    channels: 3
-
-    #Properties for Kalluna 16
-  - flag: 0
-    server_message: Welcome to Kalluna!
-    event_message: Kalluna!
-    why_am_i_recommended: Welcome to Kalluna!
-    channels: 3
-
-    #Properties for Stius 17
-  - flag: 0
-    server_message: Welcome to Stius!
-    event_message: Stius!
-    why_am_i_recommended: Welcome to Stius!
-    channels: 3
-
-    #Properties for Croa 18
-  - flag: 0
-    server_message: Welcome to Croa!
-    event_message: Croa!
-    why_am_i_recommended: Welcome to Croa!
-    channels: 3
-
-    #Properties for Zenith 19
-  - flag: 0
-    server_message: Welcome to Zenith!
-    event_message: Zenith!
-    why_am_i_recommended: Welcome to Zenith!
-    channels: 3
-
-    #Properties for Medere 20
-  - flag: 0
-    server_message: Welcome to Medere!
-    event_message: Medere!
-    why_am_i_recommended: Welcome to Medere!
-    channels: 3
-
+    meso_rate: 1
+    drop_rate: 1
+    boss_drop_rate: 7                       #NOTE: Boss drop rate OVERRIDES common drop rate, for bosses-only.
+    quest_rate: 10                          #Multiplier for Exp & Meso gains when completing a quest. Only available when USE_QUEST_RATE is true. Stacks with server Exp & Meso rates.
+    fishing_rate: 1                         #Multiplier for success likelihood on meso thrown during fishing.
+    travel_rate: 1                          #Means of transportation rides/departs using 1/N of the default time.
 
 server:
     #Database Configuration
     DB_URL_FORMAT: "jdbc:mysql://%s:3306/cosmic" # If the docker ENV for DB_HOST is anything but "db", this string format should be changed from 3306 to 3307 (or whichever port it was changed to in docker) 
     DB_HOST: "localhost" 
-    DB_USER: "cosmic_server"
-    DB_PASS: "snailshell"
+    DB_USER: "root"
+    DB_PASS: "password"
     INIT_CONNECTION_POOL_TIMEOUT: 90    # Seconds
 
     #Login Configuration
@@ -178,8 +37,8 @@ server:
     COUPON_INTERVAL: 3600000            #60 minutes, 3600000.
     UPDATE_INTERVAL: 777                #Dictates the frequency on which the "centralized server time" is updated.
 
-    ENABLE_PIC: true               #Pick true/false to enable or disable Pic. Delete character requires PIC available.
-    ENABLE_PIN: true               #Pick true/false to enable or disable Pin.
+    ENABLE_PIC: false              #Pick true/false to enable or disable Pic. Delete character requires PIC available.
+    ENABLE_PIN: false              #Pick true/false to enable or disable Pin.
 
     BYPASS_PIC_EXPIRATION: 20           #Enables PIC bypass, which will remain active for that account by that client machine for N minutes. Set 0 to disable.
     BYPASS_PIN_EXPIRATION: 15           #Enables PIN bypass, which will remain active for that account by that client machine for N minutes. Set 0 to disable.
@@ -295,11 +154,11 @@ server:
     BLOCK_GENERATE_CASH_ITEM: false     #Prevents creation of cash items with the item/drop command.
     USE_WHOLE_SERVER_RANKING: false     #Enables a ranking pool made from every character registered on the server for the "ranks" command, instead of separated by worlds.
 
-    EQUIP_EXP_RATE: 1.0                  #Rate for equipment exp gain, grows linearly. Set 1.0 for default (about 100~200 same-level range mobs killed to pass equip from level 1 to 2).
+    EQUIP_EXP_RATE: 0.0                  #Rate for equipment exp gain, grows linearly. Set 1.0 for default (about 100~200 same-level range mobs killed to pass equip from level 1 to 2).
     PQ_BONUS_EXP_RATE: 0.5               #Rate for the PQ exp reward.
 
-    EXP_SPLIT_LEVEL_INTERVAL: 5            #Non-contributing players must be within N level between the mob to receive EXP.
-    EXP_SPLIT_LEECH_INTERVAL: 5            #Non-contributing players must be within N level between any contributing party member to receive EXP.
+    EXP_SPLIT_LEVEL_INTERVAL: 20           #Non-contributing players must be within N level between the mob to receive EXP.
+    EXP_SPLIT_LEECH_INTERVAL: 20           #Non-contributing players must be within N level between any contributing party member to receive EXP.
     EXP_SPLIT_MVP_MOD: 0.2
     EXP_SPLIT_COMMON_MOD: 0.8
     PARTY_BONUS_EXP_RATE: 1.0            #Rate for the party exp bonus reward.
@@ -329,7 +188,7 @@ server:
 
     #Map Monitor Configuration
     ITEM_EXPIRE_CHECK: 10000        # (10 * 10000) Interval between item expiring tasks on maps, which checks and makes disappear expired items.
-    ITEM_LIMIT_ON_MAP: 200              #Max number of items allowed on a map.
+    ITEM_LIMIT_ON_MAP: 50               #Max number of items allowed on a map.
     MAP_VISITED_SIZE: 5                 #Max length for last mapids visited by a player. This is used to recover and update drops on these maps accordingly with player actions.
     MAP_DAMAGE_OVERTIME_INTERVAL: 2500  #Interval in milliseconds between map environment damage (e.g. El Nath and Aqua Road surrondings).
     MAP_DAMAGE_OVERTIME_COUNT: 2
@@ -370,7 +229,7 @@ server:
     USE_PERFECT_PITCH: false         #For lvl 30 or above, each lvlup grants player 1 perfect pitch.
 
     #Quest Configuration
-    USE_QUEST_RATE: false           #Exp/Meso gained by quests uses fixed server exp/meso rate times quest rate as multiplier, instead of player rates.
+    USE_QUEST_RATE: true            #Exp/Meso gained by quests uses fixed server exp/meso rate times quest rate as multiplier, instead of player rates.
 
     #Quest Points Configuration
     QUEST_POINT_REPEATABLE_INTERVAL: 25  #Minimum interval between repeatable quest completions for quest points to be awarded.
