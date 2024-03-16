@@ -46,6 +46,10 @@ public class MonsterInformationProvider {
 
     private static final MonsterInformationProvider instance = new MonsterInformationProvider();
 
+    // brandon: list of maple items
+    private static final List<Integer> MAPLE_ITEM_LIST = List.of(1302020, 1302030, 1302033, 1302035, 1302036, 1302058, 1302064, 1302066, 1302067, 1302080, 1312032, 1312033, 1322054, 1322055, 1332025, 1332055, 1332056, 1332057, 1372034, 1382009, 1382012, 1382039, 1382040, 1402039, 1402040, 1412011, 1412027, 1412028, 1422014, 1422029, 1422032, 1432012, 1432040, 1432041, 1432046, 1442024, 1442030, 1442051, 1442052, 1452016, 1452022, 1452045, 1452046, 1462014, 1462019, 1462040, 1462041, 1472030, 1472032, 1472055, 1472056
+            , 1482020, 1482021, 1482022, 1492020, 1492021, 1492022, 1092030);
+
     public static MonsterInformationProvider getInstance() {
         return instance;
     }
@@ -162,7 +166,10 @@ public class MonsterInformationProvider {
 
             try (ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
-                    ret.add(new MonsterDropEntry(rs.getInt("itemid"), rs.getInt("chance"), rs.getInt("minimum_quantity"), rs.getInt("maximum_quantity"), rs.getShort("questid")));
+                    int itemId = rs.getInt("itemId");
+                    if (!MAPLE_ITEM_LIST.contains(itemId)) {
+                        ret.add(new MonsterDropEntry(rs.getInt("itemid"), rs.getInt("chance"), rs.getInt("minimum_quantity"), rs.getInt("maximum_quantity"), rs.getShort("questid")));
+                    }
                 }
             }
         } catch (SQLException e) {
