@@ -238,4 +238,10 @@ public final class ItemConstants {
     public static boolean isHair(int itemId) {
         return itemId >= 30000 && itemId < 35000;
     }
+
+    public static boolean isScroll(int itemId) { return itemId >= 2040000 && itemId < 2048014; }
+
+    public static boolean isMagicPowder(int itemId) { return itemId >= 4007000 && itemId < 4007008; }
+
+    public static boolean isMonsterCard(int itemId) { return itemId >= 2380000 && itemId < 2388044; }
 }
