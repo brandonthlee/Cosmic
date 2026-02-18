@@ -36,9 +36,21 @@ public class SpCommand extends Command {
     @Override
     public void execute(Client c, String[] params) {
         Character player = c.getPlayer();
-        
-        // Check if player is GM and has parameters with player name
-        if (c.getPlayer().isGM() && params.length >= 2) {
+        if (params.length < 1) {
+            player.yellowMessage("Syntax: !sp [<playername>] <newsp>");
+            return;
+        }
+
+        if (params.length == 1) {
+            int newSp = Integer.parseInt(params[0]);
+            if (newSp < 0) {
+                newSp = 0;
+            } else if (newSp > YamlConfig.config.server.MAX_AP) {
+                newSp = YamlConfig.config.server.MAX_AP;
+            }
+
+            player.updateRemainingSp(newSp);
+        } else {
             Character victim = c.getWorldServer().getPlayerStorage().getCharacterByName(params[0]);
             if (victim != null) {
                 int newSp = Integer.parseInt(params[1]);
@@ -49,28 +61,11 @@ public class SpCommand extends Command {
                 }
 
                 victim.updateRemainingSp(newSp);
-                player.dropMessage(5, "SP given to " + victim.getName());
+
+                player.dropMessage(5, "SP given.");
             } else {
                 player.message("Player '" + params[0] + "' could not be found.");
             }
-            return;
         }
-
-        // Regular player usage: @sp <amount>
-        if (params.length < 1) {
-            player.yellowMessage("Usage: @sp <amount> (to set your own SP)");
-            player.yellowMessage("Usage: !sp <playername> <amount> (for GMs to set other's SP)");
-            return;
-        }
-
-        int newSp = Integer.parseInt(params[0]);
-        if (newSp < 0) {
-            newSp = 0;
-        } else if (newSp > YamlConfig.config.server.MAX_AP) {
-            newSp = YamlConfig.config.server.MAX_AP;
-        }
-
-        player.updateRemainingSp(newSp);
-        player.dropMessage("SP set to: " + newSp);
     }
 }

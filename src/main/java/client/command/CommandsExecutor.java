@@ -201,18 +201,6 @@ public class CommandsExecutor {
         addCommand("mylawn", MapOwnerClaimCommand.class);
         addCommand("bosshp", BossHpCommand.class);
         addCommand("mobhp", MobHpCommand.class);
-        
-        // Custom commands available to all players
-        addCommand("getitem", GetItemCommand.class);
-        addCommand("map", MapCommand.class);
-        addCommand("exp", ExpCommand.class);
-        
-        // Job/Skill commands available to all players
-        addCommand("job", JobCommand.class);
-        addCommand("sp", SpCommand.class);
-        addCommand("ap", ApCommand.class);
-        addCommand("maxskill", MaxSkillCommand.class);
-        addCommand("maxstat", MaxStatCommand.class);
 
         commandsNameDesc.add(levelCommandsCursor);
     }
@@ -237,6 +225,8 @@ public class CommandsExecutor {
         addCommand("whereami", 2, WhereaMiCommand.class);
         addCommand("hide", 2, HideCommand.class);
         addCommand("unhide", 2, UnHideCommand.class);
+        addCommand("sp", 2, SpCommand.class);
+        addCommand("ap", 2, ApCommand.class);
         addCommand("empowerme", 2, EmpowerMeCommand.class);
         addCommand("buffmap", 2, BuffMapCommand.class);
         addCommand("buff", 2, BuffCommand.class);
@@ -262,6 +252,7 @@ public class CommandsExecutor {
         addCommand("search", 2, SearchCommand.class);
         addCommand("jail", 2, JailCommand.class);
         addCommand("unjail", 2, UnJailCommand.class);
+        addCommand("job", 2, JobCommand.class);
         addCommand("unbug", 2, UnBugCommand.class);
         addCommand("id", 2, IdCommand.class);
         addCommand("gachalist", GachaListCommand.class);

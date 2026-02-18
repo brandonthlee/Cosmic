@@ -670,7 +670,7 @@ public class Monster extends AbstractLoadedLife {
     }
 
     private float getStatusExpMultiplier(Character attacker, boolean hasPartySharers) {
-        float multiplier = 1.2f;
+        float multiplier = 1.0f;
 
         // thanks Prophecy & Aika for finding out Holy Symbol not being applied on party bonuses
         Integer holySymbol = attacker.getBuffedValue(BuffStat.HOLY_SYMBOL);
